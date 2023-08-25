@@ -1,0 +1,28 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: [Build Backend, Build Frontend]
+    types: [completed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: SSH into Droplet
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: 165.227.32.234
+          username: root
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            docker-compose down
+            docker-compose pull
+            docker-compose up -d
