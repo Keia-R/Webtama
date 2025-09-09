@@ -16,7 +16,7 @@
   "author": "",
   "homepage": "https://github.com/choyiny/microblog#readme",
   "dependencies": {
-    "@sendgrid/mail": "^7.7.0",
+    "@sendgrid/mail": "^8.1.5",
     "@stripe/stripe-js": "^1.52.0",
     "auth0-js": "^9.20.2",
     "bcrypt": "^5.1.0",
@@ -36,7 +36,7 @@
     "socket.io-redis": "^6.1.1",
     "sqlite3": "^5.1.4",
     "stripe": "^11.17.0",
-    "twilio": "^4.9.0"
+    "twilio": "^4.23.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
